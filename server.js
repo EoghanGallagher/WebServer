@@ -1,8 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const jsonexport = require('jsonexport');
 
 const Session = require('./models/Session');
+const JsonToCsv = require('./Utils/JsonToCsv');
 
 
 
@@ -45,13 +47,19 @@ app.put( '/session', (req, res) => {
 
   var sesh = new Session(req.body);
 
+
+
+  var jTest = new JsonToCsv();
+  console.log(jTest.JsonExport( req.body ));
+
+
   sesh.save(function(err)
   {
     if (err) throw err;
 
     console.log('Session saved successfully!');
   });
-  
+
 } );
 
 // Use Routes

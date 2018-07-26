@@ -1,0 +1,8 @@
+SessionName
+DeviceName
+transitions.0.TransistionName
+transitions.0.transitionErrors.0.ProximityError
+transitions.0.transitionErrors.1
+transitions.0.transitionErrors.2
+transitions.0.transitionErrors.3
+transitions.0.transitionErrors.4
