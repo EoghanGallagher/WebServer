@@ -47,12 +47,6 @@ app.put( '/session', (req, res) => {
 
   var sesh = new Session(req.body);
 
-
-
-  var jTest = new JsonToCsv();
-  console.log(jTest.JsonExport( req.body ));
-
-
   sesh.save(function(err)
   {
     if (err) throw err;
