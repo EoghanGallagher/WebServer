@@ -14,7 +14,7 @@ const app = express();
 
 
 //Connect to test DB
-mongoose.connect('mongodb://localhost/TrailMaker');
+mongoose.connect('mongodb://eoghan:!Midkemia!76@ds161751.mlab.com:61751/detect');
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -41,7 +41,7 @@ console.log( req.body );
 
 //Parse session data from body of incoming request
 //Save session data to db
-app.put( '/session', (req, res) => {
+app.put( '/api/session', (req, res) => {
 
   res.send( 'PUT REQUEST ACCEPTED.' );
 
