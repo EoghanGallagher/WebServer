@@ -1,0 +1,261 @@
+{
+    "_id": {
+        "$oid": "5b6319b10db54600146d3442"
+    },
+    "transitions": [
+        {
+            "transitionErrors": [],
+            "TransitionNo": 1,
+            "TransistionName": " Star 1-Star A",
+            "TransitionTime": "0:1.44",
+            "Source": " Star 1",
+            "Destination": "Star A",
+            "TransitionComplete": true,
+            "ErrorCount": 0
+        },
+        {
+            "transitionErrors": [],
+            "TransitionNo": 2,
+            "TransistionName": "Star A-Star 2",
+            "TransitionTime": "0:1.66",
+            "Source": "Star A",
+            "Destination": "Star 2",
+            "TransitionComplete": true,
+            "ErrorCount": 0
+        },
+        {
+            "transitionErrors": [],
+            "TransitionNo": 3,
+            "TransistionName": "Star 2-Star B",
+            "TransitionTime": "0:1.52",
+            "Source": "Star 2",
+            "Destination": "Star B",
+            "TransitionComplete": true,
+            "ErrorCount": 0
+        },
+        {
+            "transitionErrors": [],
+            "TransitionNo": 4,
+            "TransistionName": "Star B-Star 3",
+            "TransitionTime": "0:0.76",
+            "Source": "Star B",
+            "Destination": "Star 3",
+            "TransitionComplete": true,
+            "ErrorCount": 0
+        },
+        {
+            "transitionErrors": [],
+            "TransitionNo": 5,
+            "TransistionName": "Star 3-Star C",
+            "TransitionTime": "0:0.81",
+            "Source": "Star 3",
+            "Destination": "Star C",
+            "TransitionComplete": true,
+            "ErrorCount": 0
+        },
+        {
+            "transitionErrors": [],
+            "TransitionNo": 6,
+            "TransistionName": "Star C-Star 4",
+            "TransitionTime": "0:0.66",
+            "Source": "Star C",
+            "Destination": "Star 4",
+            "TransitionComplete": true,
+            "ErrorCount": 0
+        },
+        {
+            "transitionErrors": [],
+            "TransitionNo": 7,
+            "TransistionName": "Star 4-Star D",
+            "TransitionTime": "0:1.56",
+            "Source": "Star 4",
+            "Destination": "Star D",
+            "TransitionComplete": true,
+            "ErrorCount": 0
+        },
+        {
+            "transitionErrors": [],
+            "TransitionNo": 8,
+            "TransistionName": "Star D-Star 5",
+            "TransitionTime": "0:0.50",
+            "Source": "Star D",
+            "Destination": "Star 5",
+            "TransitionComplete": true,
+            "ErrorCount": 0
+        },
+        {
+            "transitionErrors": [],
+            "TransitionNo": 9,
+            "TransistionName": "Star 5-Star E",
+            "TransitionTime": "0:1.52",
+            "Source": "Star 5",
+            "Destination": "Star E",
+            "TransitionComplete": true,
+            "ErrorCount": 0
+        },
+        {
+            "transitionErrors": [],
+            "TransitionNo": 10,
+            "TransistionName": "Star E-Star 6",
+            "TransitionTime": "0:2.40",
+            "Source": "Star E",
+            "Destination": "Star 6",
+            "TransitionComplete": true,
+            "ErrorCount": 0
+        },
+        {
+            "transitionErrors": [],
+            "TransitionNo": 11,
+            "TransistionName": "Star 6-Star F",
+            "TransitionTime": "0:1.42",
+            "Source": "Star 6",
+            "Destination": "Star F",
+            "TransitionComplete": true,
+            "ErrorCount": 0
+        },
+        {
+            "transitionErrors": [],
+            "TransitionNo": 12,
+            "TransistionName": "Star F-Star 7",
+            "TransitionTime": "0:5.04",
+            "Source": "Star F",
+            "Destination": "Star 7",
+            "TransitionComplete": true,
+            "ErrorCount": 0
+        },
+        {
+            "transitionErrors": [],
+            "TransitionNo": 13,
+            "TransistionName": "Star 7-Star G",
+            "TransitionTime": "0:0.88",
+            "Source": "Star 7",
+            "Destination": "Star G",
+            "TransitionComplete": true,
+            "ErrorCount": 0
+        },
+        {
+            "transitionErrors": [],
+            "TransitionNo": 14,
+            "TransistionName": "Star G-Star 8",
+            "TransitionTime": "0:1.36",
+            "Source": "Star G",
+            "Destination": "Star 8",
+            "TransitionComplete": true,
+            "ErrorCount": 0
+        },
+        {
+            "transitionErrors": [],
+            "TransitionNo": 15,
+            "TransistionName": "Star 8-Star H",
+            "TransitionTime": "0:0.65",
+            "Source": "Star 8",
+            "Destination": "Star H",
+            "TransitionComplete": true,
+            "ErrorCount": 0
+        },
+        {
+            "transitionErrors": [],
+            "TransitionNo": 16,
+            "TransistionName": "Star H-Star 9",
+            "TransitionTime": "0:0.66",
+            "Source": "Star H",
+            "Destination": "Star 9",
+            "TransitionComplete": true,
+            "ErrorCount": 0
+        },
+        {
+            "transitionErrors": [],
+            "TransitionNo": 17,
+            "TransistionName": "Star 9-Star I",
+            "TransitionTime": "0:1.34",
+            "Source": "Star 9",
+            "Destination": "Star I",
+            "TransitionComplete": true,
+            "ErrorCount": 0
+        },
+        {
+            "transitionErrors": [],
+            "TransitionNo": 18,
+            "TransistionName": "Star I-Star 10",
+            "TransitionTime": "0:0.72",
+            "Source": "Star I",
+            "Destination": "Star 10",
+            "TransitionComplete": true,
+            "ErrorCount": 0
+        },
+        {
+            "transitionErrors": [],
+            "TransitionNo": 19,
+            "TransistionName": "Star 10-Star J",
+            "TransitionTime": "0:1.67",
+            "Source": "Star 10",
+            "Destination": "Star J",
+            "TransitionComplete": true,
+            "ErrorCount": 0
+        },
+        {
+            "transitionErrors": [],
+            "TransitionNo": 20,
+            "TransistionName": "Star J-Star 11",
+            "TransitionTime": "0:0.86",
+            "Source": "Star J",
+            "Destination": "Star 11",
+            "TransitionComplete": true,
+            "ErrorCount": 0
+        },
+        {
+            "transitionErrors": [],
+            "TransitionNo": 21,
+            "TransistionName": "Star 11-Star K",
+            "TransitionTime": "0:1.94",
+            "Source": "Star 11",
+            "Destination": "Star K",
+            "TransitionComplete": true,
+            "ErrorCount": 0
+        },
+        {
+            "transitionErrors": [],
+            "TransitionNo": 22,
+            "TransistionName": "Star K-Star 12",
+            "TransitionTime": "0:1.77",
+            "Source": "Star K",
+            "Destination": "Star 12",
+            "TransitionComplete": true,
+            "ErrorCount": 0
+        },
+        {
+            "transitionErrors": [],
+            "TransitionNo": 23,
+            "TransistionName": "Star 12-Star L",
+            "TransitionTime": "0:0.75",
+            "Source": "Star 12",
+            "Destination": "Star L",
+            "TransitionComplete": true,
+            "ErrorCount": 0
+        },
+        {
+            "transitionErrors": [],
+            "TransitionNo": 24,
+            "TransistionName": "Star L-Star 13",
+            "TransitionTime": "0:1.66",
+            "Source": "Star L",
+            "Destination": "Star 13",
+            "TransitionComplete": true,
+            "ErrorCount": 0
+        }
+    ],
+    "SessionName": "trail_maker_session_db80a054-3989-4d95-90e2-75e00c6c82c8",
+    "SessionNumber": 22,
+    "PlayerID": "player00001",
+    "GameID": "0001",
+    "DeviceName": null,
+    "DeviceModel": "iMac18,2",
+    "DeviceType": "Desktop",
+    "DeviceUniqueIdentifier": "09DDC5B1-E183-5379-A4BA-28A00D4F17D3",
+    "SessionDuration": "00:34",
+    "TimeStamp": "08/02/2018 15:47:43",
+    "SessionCompleted": true,
+    "TransitionCount": 24,
+    "FileName": "trail_maker_session_db80a054-3989-4d95-90e2-75e00c6c82c8.dat",
+    "__v": 0
+}
