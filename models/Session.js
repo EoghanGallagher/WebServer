@@ -2,9 +2,6 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 
-mongoose.connect('mongodb://localhost/TrailMaker');
-
-
 //Create Schema
 
 // var sessionSchema = new Schema({
@@ -41,6 +38,9 @@ var sessionSchema = new Schema({
      createdAt: { type: 'Date' },
      updatedAt: { type: 'Date' }
     });
+
+
+
 
 //Create model using schema above
 var Session = mongoose.model('Session', sessionSchema );

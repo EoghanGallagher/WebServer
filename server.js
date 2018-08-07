@@ -3,8 +3,10 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const jsonexport = require('jsonexport');
 
+const Json2csvParser = require('json2csv').Parser;
+
+
 const Session = require('./models/Session');
-const JsonToCsv = require('./Utils/JsonToCsv');
 
 
 
@@ -14,10 +16,10 @@ const app = express();
 
 
 //Connect to test DB
-mongoose.connect('mongodb://eoghan:!Midkemia!76@ds161751.mlab.com:61751/detect');
-
+//mongoose.connect('mongodb://eoghan:midkemia76@ds161751.mlab.com:61751/detect', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost:27017/StarRacer');
 const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
+db.on('error', console.error.bind(console, 'connection error ::::'));
 db.once('open', function() {
   // we're connected!
   console.log('Connected to DB...');
@@ -39,104 +41,52 @@ console.log( req.body );
 } );
 
 
+
+const fields = [ 'SessionName',
+                // 'SessionNumber',
+                 //'PlayerID',
+                 //'GameID',
+                 //'DeviceName',
+                 //'DeviceModel',
+                 //'DeviceType',
+                 //'DeviceUniqueIdentifier',
+                // 'SessionDuration',
+                // 'TimeStamp',
+                // 'SessionCompleted',
+
+                 'transitions.TransitionNo',
+                 'transitions.TransistionName'
+
+                  ];
+
+
+
 app.get('/api/session' , (req, res) => {
 
-  res.setHeader('Content-Type', 'application/json');
-  res.send( JSON.stringify(
+  Session.find({}, function (err, sessions)
+  {
+     // try
+     // {
+     //   const csv = json2csv( sessions, opts );
+     //   res.send(csv);
+     // }
+     // catch (err)
+     // {
+     //   console.error(err);
+     // }
 
-    {
-    "_id": {
-        "$oid": "5b6319700db54600146d3441"
-    },
-    "transitions": [
-        {
-            "transitionErrors": [],
-            "TransitionNo": 1,
-            "TransistionName": " Star 1-Star A",
-            "TransitionTime": "0:1.16",
-            "Source": " Star 1",
-            "Destination": "Star A",
-            "TransitionComplete": true,
-            "ErrorCount": 0
-        },
-        {
-            "transitionErrors": [],
-            "TransitionNo": 2,
-            "TransistionName": "Star A-Star 2",
-            "TransitionTime": "0:0.58",
-            "Source": "Star A",
-            "Destination": "Star 2",
-            "TransitionComplete": true,
-            "ErrorCount": 0
-        },
-        {
-            "transitionErrors": [],
-            "TransitionNo": 3,
-            "TransistionName": "Star 2-Star B",
-            "TransitionTime": "0:0.61",
-            "Source": "Star 2",
-            "Destination": "Star B",
-            "TransitionComplete": true,
-            "ErrorCount": 0
-        },
-        {
-            "transitionErrors": [],
-            "TransitionNo": 4,
-            "TransistionName": "Star B-Star 3",
-            "TransitionTime": "0:0.56",
-            "Source": "Star B",
-            "Destination": "Star 3",
-            "TransitionComplete": true,
-            "ErrorCount": 0
-        },
-        {
-            "transitionErrors": [],
-            "TransitionNo": 5,
-            "TransistionName": "Star 3-Star C",
-            "TransitionTime": "0:1.24",
-            "Source": "Star 3",
-            "Destination": "Star C",
-            "TransitionComplete": true,
-            "ErrorCount": 0
-        },
-        {
-            "transitionErrors": [],
-            "TransitionNo": 6,
-            "TransistionName": "Star C-Star 4",
-            "TransitionTime": "0:0.94",
-            "Source": "Star C",
-            "Destination": "Star 4",
-            "TransitionComplete": true,
-            "ErrorCount": 0
-        },
-        {
-            "transitionErrors": [],
-            "TransitionNo": 7,
-            "TransistionName": "Star 4-Star D",
-            "TransitionTime": "0:0.63",
-            "Source": "Star 4",
-            "Destination": "Star D",
-            "TransitionComplete": true,
-            "ErrorCount": 0
-        }
-    ],
-    "SessionName": "trail_maker_session_b9add8c4-5839-49f6-aeec-97ebad3969d6",
-    "SessionNumber": 22,
-    "PlayerID": "player00001",
-    "GameID": "0001",
-    "DeviceName": null,
-    "DeviceModel": "iMac18,2",
-    "DeviceType": "Desktop",
-    "DeviceUniqueIdentifier": "09DDC5B1-E183-5379-A4BA-28A00D4F17D3",
-    "SessionDuration": "00:06",
-    "TimeStamp": "08/02/2018 15:47:05",
-    "SessionCompleted": true,
-    "TransitionCount": 7,
-    "FileName": "trail_maker_session_b9add8c4-5839-49f6-aeec-97ebad3969d6.dat",
-    "__v": 0
-}
 
-  ) );
+     const json2csvParser = new Json2csvParser( { fields, unwind:['transitions' ,'transitions'] });
+     const csv = json2csvParser.parse(sessions);
+
+     //const json2csv = new json2csv({ fields });
+     //const csv = json2csv.parse(sessions);
+
+     res.send( csv );
+
+  });
+
+
 
 });
 
