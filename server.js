@@ -4,9 +4,12 @@ const bodyParser = require('body-parser');
 const jsonexport = require('jsonexport');
 
 const Json2csvParser = require('json2csv').Parser;
+const flatten = require('flat');
 
 
 const Session = require('./models/Session');
+const Fields = require('./models/SessionFields');
+const fs = require('fs');
 
 
 
@@ -17,7 +20,7 @@ const app = express();
 
 //Connect to test DB
 //mongoose.connect('mongodb://eoghan:midkemia76@ds161751.mlab.com:61751/detect', { useNewUrlParser: true });
-mongoose.connect('mongodb://localhost:27017/StarRacer');
+mongoose.connect('mongodb://localhost:27017/StarRacer', { useNewUrlParser: true });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error ::::'));
 db.once('open', function() {
@@ -42,49 +45,51 @@ console.log( req.body );
 
 
 
-const fields = [ 'SessionName',
-                // 'SessionNumber',
-                 //'PlayerID',
-                 //'GameID',
-                 //'DeviceName',
-                 //'DeviceModel',
-                 //'DeviceType',
-                 //'DeviceUniqueIdentifier',
-                // 'SessionDuration',
-                // 'TimeStamp',
-                // 'SessionCompleted',
-
-                 'transitions.TransitionNo',
-                 'transitions.TransistionName'
-
-                  ];
-
-
-
 app.get('/api/session' , (req, res) => {
 
-  Session.find({}, function (err, sessions)
+  Session.find({}).exec( function (err, sessions)
   {
-     // try
-     // {
-     //   const csv = json2csv( sessions, opts );
-     //   res.send(csv);
-     // }
-     // catch (err)
-     // {
-     //   console.error(err);
-     // }
 
 
-     const json2csvParser = new Json2csvParser( { fields, unwind:['transitions' ,'transitions'] });
-     const csv = json2csvParser.parse(sessions);
+     //res.send( flatten( test ) );
+
+
+     //const json2csvParser = new Json2csvParser( { fields, unwind:['transitions' ,'transitions'] });
+     //const csv = json2csvParser.parse(sessions);
 
      //const json2csv = new json2csv({ fields });
      //const csv = json2csv.parse(sessions);
 
-     res.send( csv );
+     //res.send( csv );
+
+     var transformedSessions = sessions.map( function( session ){
+       return session.toJSON();
+     });
+
+     const fields = Fields.GetFields();
+     console.log( fields );
+
+     const json2csvParser = new Json2csvParser( { fields });
+     const csv = json2csvParser.parse(transformedSessions);
+
+
+
+     fs.writeFile('test1.csv', csv, (err) => {
+
+        if(err) throw err;
+
+        console.log( 'csv saved' );
+        res.download( 'test1.csv' );
+     });
+
+
+
+    // res.send( csv );
+
+    // res.send( flatten(transformedSessions) );
 
   });
+
 
 
 

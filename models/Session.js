@@ -20,6 +20,8 @@ var Schema = mongoose.Schema;
 //     updated_at: Date
 // });
 
+
+
 var sessionSchema = new Schema({
      transitions: { type: 'array', items: [Object] },
      SessionName: { type: 'string' },
@@ -39,8 +41,17 @@ var sessionSchema = new Schema({
      updatedAt: { type: 'Date' }
     });
 
+    sessionSchema.options.toJSON = {
+    transform: function(doc, ret, options) {
+        ret.id = ret._id;
+        delete ret._id;
+        delete ret.__v;
+        return ret;
+    }
+};
 
 
+//var Fields = Object.keys( sessionSchema.schema.paths );
 
 //Create model using schema above
 var Session = mongoose.model('Session', sessionSchema );
