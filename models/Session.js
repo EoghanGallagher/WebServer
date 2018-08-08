@@ -35,6 +35,7 @@ var sessionSchema = new Schema({
      SessionDuration: { type: 'string' },
      TimeStamp: { type: 'string' },
      SessionCompleted: { type: 'boolean' },
+     TimeToStartSession: {type: 'string'},
      TransitionCount: { type: 'number' },
      FileName: { type: 'string' },
      createdAt: { type: 'Date' },

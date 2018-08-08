@@ -11,11 +11,7 @@ const Session = require('./models/Session');
 const Fields = require('./models/SessionFields');
 const fs = require('fs');
 
-
-
 const app = express();
-
-
 
 
 //Connect to test DB
